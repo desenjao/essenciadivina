@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essências Divinas - Artigos Espirituais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #8B4513;
+            --color-secondary: #D4AF37;
+            --color-accent: #5D4037;
+            --color-light: #F5F5DC;
+            --color-dark: #1A120B;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--color-light);
+            color: var(--color-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to bottom, rgba(26, 18, 11, 0.9), rgba(26, 18, 11, 0.7));
+            color: var(--color-light);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--color-secondary);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            color: var(--color-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-secondary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-secondary);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        /* Hero Section - COM PELÍCULA ESCURA */
+.hero {
+    background-image: url("https://i.pinimg.com/736x/1b/3b/cd/1b3bcdbbf5351ded0804b5cc19814114.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: black;
+    padding-top: 80px;
+    position: relative; /* Adicionado para posicionar o overlay */
+}
+
+/* Overlay escuro com blur - APENAS no fundo */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Camada escura semi-transparente */
+    backdrop-filter: blur(3px); /* Efeito de desfoque */
+    z-index: 1; /* Colocado atrás do conteúdo */
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative; /* Garante que fique acima do overlay */
+    z-index: 2; /* Colocado acima do overlay */
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--color-secondary);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white; /* Alterado para melhor contraste com o fundo escuro */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Melhora a legibilidade */
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: var(--color-secondary);
+    color: var(--color-dark);
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    position: relative; /* Garante que fique acima do overlay */
+    z-index: 2; /* Colocado acima do overlay */
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+    background: #e6c44f;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, var(--color-light), #f8f8e6);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--color-secondary);
+            margin: 15px auto;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-accent);
+            margin-bottom: 20px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #f8f8e6, var(--color-light));
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-accent);
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            color: var(--color-primary);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--color-secondary);
+            color: var(--color-dark);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, var(--color-light), #f8f8e6);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--color-accent);
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 15px;
+        }
+
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(rgba(26, 18, 11, 0.8), rgba(26, 18, 11, 0.8)), url('https://images.unsplash.com/photo-1534337621606-e3df5ee0e97f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--color-light);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-secondary);
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-dark);
+            color: var(--color-light);
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-secondary);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--color-secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--color-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-secondary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--color-light);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--color-secondary);
+            color: var(--color-dark);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #20ba5a;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <i class="fas fa-star-and-crescent"></i>
+                    Essências Divinas
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#products">Produtos</a></li>
+                    <li><a href="#testimonials">Depoimentos</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero dark-overlay-blur">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Conecte-se com o Divino</h1>
+                <p>Descubra artigos espirituais que elevam sua essência e fortalecem sua conexão com o sagrado. Cada peça é cuidadosamente selecionada para trazer luz e significado à sua jornada.</p>
+                <a href="#products" class="btn">Explorar Produtos</a>
+            </div>
+        </div>
+    </section>
+
+  <!-- About Section -->
+<section id="about" class="about" style="padding: 80px 0; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <div class="container" style="width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px;">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 50px; font-size: 2.5rem; color: #1a1a1a; position: relative;">
+            Nossa Essência
+            <span style="content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: #D4AF37;"></span>
+        </h2>
+        
+        <div class="about-content" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+            <!-- Card 1 -->
+            <div class="about-card" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); flex: 1; min-width: 250px; max-width: 350px; text-align: center; transition: transform 0.3s ease;">
+                <div class="icon-wrapper" style="width: 80px; height: 80px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                    <i class="fas fa-seedling" style="font-size: 32px; color: #D4AF37;"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: #1a1a1a;">A Centelha do Sagrado</h3>
+                <p style="color: #555; line-height: 1.6; margin-bottom: 20px;">Na Essências Divinas, acreditamos que cada pessoa carrega dentro de si uma centelha do divino - uma conexão sagrada com o universo e com o Criador.</p>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="about-card" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); flex: 1; min-width: 250px; max-width: 350px; text-align: center; transition: transform 0.3s ease;">
+                <div class="icon-wrapper" style="width: 80px; height: 80px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                    <i class="fas fa-hands" style="font-size: 32px; color: #D4AF37;"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: #1a1a1a;">Expressões Tangíveis</h3>
+                <p style="color: #555; line-height: 1.6; margin-bottom: 20px;">Nossos produtos são mais do que simples objetos; são expressões tangíveis dessa espiritualidade, cuidadosamente selecionados para sua jornada.</p>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="about-card" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); flex: 1; min-width: 250px; max-width: 350px; text-align: center; transition: transform 0.3s ease;">
+                <div class="icon-wrapper" style="width: 80px; height: 80px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                    <i class="fas fa-shield-heart" style="font-size: 32px; color: #D4AF37;"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: #1a1a1a;">Proteção e Memória</h3>
+                <p style="color: #555; line-height: 1.6; margin-bottom: 20px;">Cada artigo foi selecionado para ajudar você a manifestar proteção, memória, cuidado e presença espiritual em sua vida cotidiana.</p>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="about-card" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); flex: 1; min-width: 250px; max-width: 350px; text-align: center; transition: transform 0.3s ease;">
+                <div class="icon-wrapper" style="width: 80px; height: 80px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                    <i class="fas fa-heart" style="font-size: 32px; color: #D4AF37;"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: #1a1a1a;">Amor e Fé</h3>
+                <p style="color: #555; line-height: 1.6; margin-bottom: 25px;">São símbolos que remetem ao amor, à fé e à paz interior que residem em sua essência mais pura.</p>
+              
+            </div>
+        </div>
+         
+    </div>
+    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre os produtos da Essências Divinas" 
+   class="btn" 
+   style="display: flex; justify-content: center; align-items: center; margin-top: 2rem; padding: 12px 25px; background: #D4AF37; color: #1a1a1a; text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s ease;">
+    Fale Conosco
+</a>
+</section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Nossos Produtos</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.pinimg.com/736x/71/17/10/711710a92df4d66fda32c99815c87ba6.jpg" alt="Cristais energéticos">
+                    </div>
+                    <span class="product-badge">Mais Vendido</span>
+                    <div class="product-info">
+                        <h3 class="product-title">Terço Miçanga</h3>
+                        <p class="product-price">R$ 49,90</p>
+                        <p class="product-description">Seleção de cristais para harmonização de ambientes e meditação. Inclui quartzo rosa, ametista e citrino.</p>
+                        <a href="https://wa.me/5511999999999?text=Olá! Gostaria de comprar o Kit Cristais Energéticos" class="btn">Comprar Agora</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://a-static.mlcdn.com.br/1500x1500/terco-catolico-no-fio-de-seda-rosa-infantil-micanga-divino-terco/almah/azulinfantil/12236551905f74cf63e5fdc63bf7bad4.jpeg" alt="Incensos aromáticos">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">kit infantil</h3>
+                        <p class="product-price">R$ 139,90</p>
+                        <p class="product-description">Caixa com 12 terços de alta qualidade para purificação e elevação espiritual.</p>
+                        <a href="https://wa.me/5511999999999?text=Olá! Gostaria de comprar os Incensos Aromáticos" class="btn">Comprar Agora</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDpA1GjFulH4o6CT__L0pZn0i0UIp_Ve3gZOTAcJzEoZ9rQaOJnZ_Jo04A928TaE1gvz4&usqp=CAU" alt="Pulseira de proteção">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Terço de Proteção</h3>
+                        <p class="product-price">R$ 79,90</p>
+                        <p class="product-description">Pulseira artesanal com pedras naturais e símbolos de proteção. Disponível em vários tamanhos.</p>
+                        <a href="https://wa.me/5511999999999?text=Olá! Gostaria de comprar a Pulseira de Proteção" class="btn">Comprar Agora</a>
+                    </div>
+                </div>
+                
+               
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Transformations Section -->
+<section id="transformations" class="transformations" style="padding: 100px 0; background: linear-gradient(to bottom, #f8f5f0 0%, #e8e1d1 100%); position: relative;">
+    <div class="container" style="width: 90%; max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 60px; font-size: 2.8rem; color: #1a1a1a; font-family: 'Playfair Display', serif;">
+            Transformações Possíveis
+            <span style="display: block; width: 80px; height: 3px; background: #D4AF37; margin: 15px auto; border-radius: 2px;"></span>
+            <p style="font-size: 1.2rem; color: #5a5a5a; margin-top: 15px; font-weight: 300; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Da inquietação à paz interior: como nossos produtos sagrados facilitam jornadas de transformação
+            </p>
+        </h2>
+        
+        <div class="transformations-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            
+            <!-- Card 1 -->
+            <div class="transformation-card" style="background: rgba(255, 255, 255, 0.9); border-radius: 15px; padding: 30px; box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15); transition: all 0.4s ease; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(to right, #D4AF37, #b8941f);"></div>
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 60px; height: 60px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <i class="fas fa-shield-alt" style="color: #D4AF37; font-size: 24px;"></i>
+                    </div>
+                    <h3 style="color: #1a1a1a; font-size: 1.4rem;">Proteção Energética</h3>
+                </div>
+                <div style="border-left: 3px solid #D4AF37; padding-left: 15px; margin: 20px 0;">
+                    <p style="color: #7a7a7a; margin-bottom: 10px; font-weight: 500;">
+                        <i class="fas fa-times" style="color: #c33; margin-right: 8px;"></i>
+                        <span style="text-decoration: line-through;">Vulnerabilidade energética e influências negativas</span>
+                    </p>
+                    <p style="color: #1a1a1a; font-weight: 600;">
+                        <i class="fas fa-check" style="color: #2a8; margin-right: 8px;"></i>
+                        Campo áurico fortalecido e ambiente protegido
+                    </p>
+                </div>
+                <p style="color: #444; line-height: 1.6;">
+                    Nossos símbolos de proteção criam um escudo energético que filtra influências negativas, transformando ambientes em santuários seguros para seu desenvolvimento espiritual.
+                </p>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="transformation-card" style="background: rgba(255, 255, 255, 0.9); border-radius: 15px; padding: 30px; box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15); transition: all 0.4s ease; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(to right, #D4AF37, #b8941f);"></div>
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 60px; height: 60px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <i class="fas fa-heart" style="color: #D4AF37; font-size: 24px;"></i>
+                    </div>
+                    <h3 style="color: #1a1a1a; font-size: 1.4rem;">Conexão Espiritual</h3>
+                </div>
+                <div style="border-left: 3px solid #D4AF37; padding-left: 15px; margin: 20px 0;">
+                    <p style="color: #7a7a7a; margin-bottom: 10px; font-weight: 500;">
+                        <i class="fas fa-times" style="color: #c33; margin-right: 8px;"></i>
+                        <span style="text-decoration: line-through;">Desconexão com o divino e propósito</span>
+                    </p>
+                    <p style="color: #1a1a1a; font-weight: 600;">
+                        <i class="fas fa-check" style="color: #2a8; margin-right: 8px;"></i>
+                        Comunhão com o sagrado e missão de vida
+                    </p>
+                </div>
+                <p style="color: #444; line-height: 1.6;">
+                    Através de nossos artefatos sagrados, você reconecta-se com sua essência divina, reacendendo a centelha espiritual que ilumina seu caminho e propósito existencial.
+                </p>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="transformation-card" style="background: rgba(255, 255, 255, 0.9); border-radius: 15px; padding: 30px; box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15); transition: all 0.4s ease; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(to right, #D4AF37, #b8941f);"></div>
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 60px; height: 60px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <i class="fas fa-balance-scale" style="color: #D4AF37; font-size: 24px;"></i>
+                    </div>
+                    <h3 style="color: #1a1a1a; font-size: 1.4rem;">Equilíbrio Emocional</h3>
+                </div>
+                <div style="border-left: 3px solid #D4AF37; padding-left: 15px; margin: 20px 0;">
+                    <p style="color: #7a7a7a; margin-bottom: 10px; font-weight: 500;">
+                        <i class="fas fa-times" style="color: #c33; margin-right: 8px;"></i>
+                        <span style="text-decoration: line-through;">Instabilidade emocional e ansiedade</span>
+                    </p>
+                    <p style="color: #1a1a1a; font-weight: 600;">
+                        <i class="fas fa-check" style="color: #2a8; margin-right: 8px;"></i>
+                        Harmonia interior e serenidade duradoura
+                    </p>
+                </div>
+                <p style="color: #444; line-height: 1.6;">
+                    Nossas essências e cristais atuam como âncoras energéticas, transformando turbulências emocionais em estados de paz profunda e equilíbrio constante.
+                </p>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="transformation-card" style="background: rgba(255, 255, 255, 0.9); border-radius: 15px; padding: 30px; box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15); transition: all 0.4s ease; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(to right, #D4AF37, #b8941f);"></div>
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 60px; height: 60px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <i class="fas fa-home" style="color: #D4AF37; font-size: 24px;"></i>
+                    </div>
+                    <h3 style="color: #1a1a1a; font-size: 1.4rem;">Ambiente Sagrado</h3>
+                </div>
+                <div style="border-left: 3px solid #D4AF37; padding-left: 15px; margin: 20px 0;">
+                    <p style="color: #7a7a7a; margin-bottom: 10px; font-weight: 500;">
+                        <i class="fas fa-times" style="color: #c33; margin-right: 8px;"></i>
+                        <span style="text-decoration: line-through;">Espaços carregados e sem energia vital</span>
+                    </p>
+                    <p style="color: #1a1a1a; font-weight: 600;">
+                        <i class="fas fa-check" style="color: #2a8; margin-right: 8px;"></i>
+                        Lar transformado em templo sagrado
+                    </p>
+                </div>
+                <p style="color: #444; line-height: 1.6;">
+                    Convertemos espaços comuns em ambientes consagrados, onde cada objeto sagrado purifica e eleva a energia, criando um santuário pessoal para práticas espirituais.
+                </p>
+            </div>
+            
+            <!-- Card 5 -->
+            <div class="transformation-card" style="background: rgba(255, 255, 255, 0.9); border-radius: 15px; padding: 30px; box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15); transition: all 0.4s ease; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(to right, #D4AF37, #b8941f);"></div>
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 60px; height: 60px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <i class="fas fa-eye" style="color: #D4AF37; font-size: 24px;"></i>
+                    </div>
+                    <h3 style="color: #1a1a1a; font-size: 1.4rem;">Claridade Mental</h3>
+                </div>
+                <div style="border-left: 3px solid #D4AF37; padding-left: 15px; margin: 20px 0;">
+                    <p style="color: #7a7a7a; margin-bottom: 10px; font-weight: 500;">
+                        <i class="fas fa-times" style="color: #c33; margin-right: 8px;"></i>
+                        <span style="text-decoration: line-through;">Confusão mental e falta de foco</span>
+                    </p>
+                    <p style="color: #1a1a1a; font-weight: 600;">
+                        <i class="fas fa-check" style="color: #2a8; margin-right: 8px;"></i>
+                        Mente clara e intuição amplificada
+                    </p>
+                </div>
+                <p style="color: #444; line-height: 1.6;">
+                    Nossas ferramentas espirituais dissolvem a névoa mental, aguçando a intuição e conectando você com sabedoria interior para decisões alinhadas com seu propósito.
+                </p>
+            </div>
+            
+            <!-- Card 6 -->
+            <div class="transformation-card" style="background: rgba(255, 255, 255, 0.9); border-radius: 15px; padding: 30px; box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15); transition: all 0.4s ease; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(to right, #D4AF37, #b8941f);"></div>
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 60px; height: 60px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <i class="fas fa-hands" style="color: #D4AF37; font-size: 24px;"></i>
+                    </div>
+                    <h3 style="color: #1a1a1a; font-size: 1.4rem;">Cura Energética</h3>
+                </div>
+                <div style="border-left: 3px solid #D4AF37; padding-left: 15px; margin: 20px 0;">
+                    <p style="color: #7a7a7a; margin-bottom: 10px; font-weight: 500;">
+                        <i class="fas fa-times" style="color: #c33; margin-right: 8px;"></i>
+                        <span style="text-decoration: line-through;">Bloqueios e estagnação energética</span>
+                    </p>
+                    <p style="color: #1a1a1a; font-weight: 600;">
+                        <i class="fas fa-check" style="color: #2a8; margin-right: 8px;"></i>
+                        Fluxo energético restaurado e cura integral
+                    </p>
+                </div>
+                <p style="color: #444; line-height: 1.6;">
+                    Através de nossos instrumentos de cura, dissolvemos bloqueios energéticos, restabelecendo o fluxo vital e promovendo regeneração em todos os níveis do ser.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Pronto para Elevar Sua Jornada Espiritual?</h2>
+                <p>Nossos produtos são selecionados com intenção e cuidado para ajudar você a conectar-se com sua essência divina. Entre em contato conosco para encontrar o artigo perfeito para sua necessidade.</p>
+                <a href="https://wa.me/5511999999999?text=Olá! Gostaria de fazer um pedido na Essências Divinas" class="btn">Fazer Pedido pelo WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Essências Divinas</h3>
+                    <p>Artigos espirituais para conectar você com sua essência divina e elevar sua jornada espiritual.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> (11) 99999-9999</li>
+                        <li><i class="fas fa-envelope"></i> contato@essenciasdivinas.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> São Paulo, SP</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Essências Divinas. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre os produtos da Essências Divinas" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'var(--color-dark)';
+            } else {
+                header.style.background = 'linear-gradient(to bottom, rgba(26, 18, 11, 0.9), rgba(26, 18, 11, 0.7))';
+            }
+        });
+
+        // Simple animation for elements when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.product-card, .testimonial-card, .about-content').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
