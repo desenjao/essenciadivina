@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essências Divinas - Artigos Espirituais Personalizados</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --color-primary: #8B4513;
+            --color-secondary: #D4AF37;
+            --color-accent: #5D4037;
+            --color-light: #F5F5DC;
+            --color-dark: #1A120B;
+            --transition: all 0.3s ease;
+            --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--color-light);
+            color: var(--color-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        header {
+            background: var(--color-dark);
+            color: var(--color-light);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--color-secondary);
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--color-light);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-secondary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-secondary);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--color-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.pinimg.com/736x/1b/3b/cd/1b3bcdbbf5351ded0804b5cc19814114.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--color-secondary);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: var(--color-secondary);
+            color: var(--color-dark);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            background: #e6c44f;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Common Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary);
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--color-secondary);
+            margin: 15px auto;
+        }
+
+        /* Card Styles - Enhanced Design */
+        .card {
+            background: linear-gradient(145deg, #ffffff, #f8f8f8);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--color-secondary), var(--color-primary));
+            z-index: -1;
+            border-radius: 22px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card .icon-wrapper {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            transition: var(--transition);
+        }
+
+        .card:hover .icon-wrapper {
+            transform: scale(1.15);
+            animation: pulse-icon 1.5s infinite;
+        }
+
+        .card i {
+            font-size: 26px;
+            color: var(--color-secondary);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--color-dark);
+        }
+
+        .card p {
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        @keyframes pulse-icon {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .center-btn {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Products Section */
+        .products {
+            background: linear-gradient(to bottom, #f8f8e6, var(--color-light));
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: linear-gradient(145deg, #ffffff, #f8f8f8);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--color-secondary), var(--color-primary));
+            z-index: -1;
+            border-radius: 22px;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-accent);
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .product-price {
+            color: var(--color-primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--color-secondary);
+            color: var(--color-dark);
+            padding: 5px 12px;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Transformations Section */
+        .transformations {
+            background: linear-gradient(to bottom, #f8f5f0, #e8e1d1);
+        }
+
+        .transformations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .transformation-card {
+            background: linear-gradient(145deg, #ffffff, #f8f8f8);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .transformation-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--color-secondary), var(--color-primary));
+            z-index: -1;
+            border-radius: 22px;
+        }
+
+        .transformation-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .transformation-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .transformation-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+
+        .transformation-icon i {
+            color: var(--color-secondary);
+            font-size: 20px;
+        }
+
+        .transformation-card h3 {
+            color: var(--color-dark);
+            font-size: 1.2rem;
+        }
+
+        .transformation-comparison {
+            border-left: 3px solid var(--color-secondary);
+            padding-left: 10px;
+            margin: 10px 0;
+            font-size: 0.85rem;
+        }
+
+        .before, .after {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .before i {
+            color: #c33;
+            margin-right: 6px;
+        }
+
+        .after i {
+            color: #2a8;
+            margin-right: 6px;
+        }
+
+        .before span {
+            color: #7a7a7a;
+            text-decoration: line-through;
+        }
+
+        .after span {
+            color: var(--color-dark);
+            font-weight: 600;
+        }
+
+        .transformation-card p {
+            color: #444;
+            line-height: 1.5;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* Progress Line - Vertical */
+        .progress-container {
+            position: fixed;
+            top: 80px;
+            left: 30px;
+            height: calc(100vh - 100px);
+            width: 8px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            z-index: 999;
+        }
+
+        .progress-fill {
+            width: 100%;
+            height: 0%;
+            background: linear-gradient(to bottom, var(--color-secondary), var(--color-primary));
+            border-radius: 10px;
+            transition: height 0.5s ease;
+        }
+
+        .progress-points {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .progress-point {
+            width: 20px;
+            height: 20px;
+            background: #e0e0e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: white;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .progress-point.active {
+            background: var(--color-secondary);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .progress-point .message {
+            position: absolute;
+            left: 30px;
+            background: var(--color-dark);
+            color: var(--color-light);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .progress-point.active .message {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(26, 18, 11, 0.8), rgba(26, 18, 11, 0.8)), url('https://images.unsplash.com/photo-1534337621606-e3df5ee0e97f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--color-light);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-secondary);
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-dark);
+            color: var(--color-light);
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-secondary);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--color-secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links i {
+            margin-right: 10px;
+        }
+
+        .footer-links a {
+            color: var(--color-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-secondary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--color-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--color-secondary);
+            color: var(--color-dark);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #20ba5a;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* Mobile Centralization */
+        @media (max-width: 768px) {
+            .container {
+                text-align: center;
+            }
+
+            .about-grid, .products-grid, .transformations-grid {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+
+            .card, .product-card, .transformation-card {
+                max-width: 85%;
+                margin: 0 auto;
+            }
+
+            .hero-content, .cta-content {
+                text-align: center;
+            }
+
+            .progress-container {
+                width: 6px;
+                left: 15px;
+                height: calc(100vh - 120px);
+            }
+
+            .progress-point {
+                width: 15px;
+                height: 15px;
+                font-size: 0.6rem;
+            }
+
+            .progress-point .message {
+                font-size: 0.7rem;
+                padding: 4px 8px;
+                left: 25px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 2.8rem; }
+            .transformations-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--color-dark);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: var(--transition);
+            }
+            .nav-links.active { left: 0; }
+            .hero h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 { font-size: 2rem; }
+            .btn { padding: 12px 25px; }
+            section { padding: 60px 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Line -->
+    <div class="progress-container">
+        <div class="progress-fill"></div>
+        <div class="progress-points">
+            <div class="progress-point" data-section="home"><span class="message">Início da Jornada</span></div>
+            <div class="progress-point" data-section="about"><span class="message">Descubra a Essência</span></div>
+            <div class="progress-point" data-section="products"><span class="message">Explore os Artigos</span></div>
+            <div class="progress-point" data-section="transformations"><span class="message">Transforme-se</span></div>
+            <div class="progress-point" data-section="cta"><span class="message">Eleve-se Agora</span></div>
+            <div class="progress-point" data-section="contact"><span class="message">Conecte-se</span></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <i class="fas fa-star-and-crescent"></i>
+                    Essências Divinas
+                </a>
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                <ul class="nav-links">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#products">Produtos</a></li>
+                    <li><a href="#transformations">Transformações</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Desperte Sua Essência Divina</h1>
+                <p>Explore artigos espirituais que iluminam sua jornada interior, trazendo paz e equilíbrio.</p>
+                <a href="#products" class="btn">Descubra Nossos Produtos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Nossa Essência</h2>
+            <div class="about-grid">
+                <div class="card about-card">
+                    <div class="icon-wrapper"><i class="fas fa-seedling"></i></div>
+                    <h3>Centelha Sagrada</h3>
+                    <p>Luz eterna do Criador.</p>
+                </div>
+                <div class="card about-card">
+                    <div class="icon-wrapper"><i class="fas fa-hands"></i></div>
+                    <h3>Expressão Espiritual</h3>
+                    <p>Guia para sua evolução.</p>
+                </div>
+                <div class="card about-card">
+                    <div class="icon-wrapper"><i class="fas fa-shield-heart"></i></div>
+                    <h3>Proteção Divina</h3>
+                    <p>Escudo para o cotidiano.</p>
+                </div>
+                <div class="card about-card">
+                    <div class="icon-wrapper"><i class="fas fa-heart"></i></div>
+                    <h3>Amor e Paz</h3>
+                    <p>Fé que acalma a alma.</p>
+                </div>
+            </div>
+            <div class="center-btn">
+                <a href="https://wa.me/5589974007492?text=Olá! Gostaria de saber mais sobre os artigos da Essências Divinas" class="btn">Entre em Contato</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Nossos Artigos Espirituais</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.pinimg.com/736x/71/17/10/711710a92df4d66fda32c99815c87ba6.jpg" alt="Terço Miçanga Espiritual">
+                    </div>
+                    <span class="product-badge">Mais Vendido</span>
+                    <div class="product-info">
+                        <h3 class="product-title">Terço Miçanga</h3>
+                        <p class="product-price">R$ 49,90</p>
+                        <p class="product-description">Miçangas para meditação.</p>
+                        <a href="https://wa.me/5589974007492?text=Olá! Gostaria de saber mais sobre o Terço Miçanga" class="btn">Adquirir Agora</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://a-static.mlcdn.com.br/1500x1500/terco-catolico-no-fio-de-seda-rosa-infantil-micanga-divino-terco/almah/azulinfantil/12236551905f74cf63e5fdc63bf7bad4.jpeg" alt="Kit Terços Infantis">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Kit Terços Infantis</h3>
+                        <p class="product-price">R$ 139,90</p>
+                        <p class="product-description">Terços para crianças.</p>
+                        <a href="https://wa.me/5589974007492?text=Olá! Gostaria de saber mais sobre o Kit Terços Infantis" class="btn">Adquirir Agora</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDpA1GjFulH4o6CT__L0pZn0i0UIp_Ve3gZOTAcJzEoZ9rQaOJnZ_Jo04A928TaE1gvz4&usqp=CAU" alt="Terço de Proteção">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Terço de Proteção</h3>
+                        <p class="product-price">R$ 79,90</p>
+                        <p class="product-description">Proteção artesanal.</p>
+                        <a href="https://wa.me/5589974007492?text=Olá! Gostaria de saber mais sobre o Terço de Proteção" class="btn">Adquirir Agora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformations Section -->
+    <section id="transformations" class="transformations">
+        <div class="container">
+            <h2 class="section-title">Transformações Espirituais</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #5a5a5a; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Acompanhe sua jornada espiritual com artigos que transformam sua conexão com o divino.
+            </p>
+            <div class="transformations-grid">
+                <div class="transformation-card">
+                    <div class="transformation-header">
+                        <div class="transformation-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Proteção Energética</h3>
+                    </div>
+                    <div class="transformation-comparison">
+                        <div class="before"><i class="fas fa-times"></i><span>Vulnerabilidade</span></div>
+                        <div class="after"><i class="fas fa-check"></i><span>Escudo espiritual</span></div>
+                    </div>
+                    <p>Santuário de paz.</p>
+                </div>
+                <div class="transformation-card">
+                    <div class="transformation-header">
+                        <div class="transformation-icon"><i class="fas fa-heart"></i></div>
+                        <h3>Conexão Divina</h3>
+                    </div>
+                    <div class="transformation-comparison">
+                        <div class="before"><i class="fas fa-times"></i><span>Desconexão</span></div>
+                        <div class="after"><i class="fas fa-check"></i><span>Comunhão sagrada</span></div>
+                    </div>
+                    <p>Chama interior acesa.</p>
+                </div>
+                <div class="transformation-card">
+                    <div class="transformation-header">
+                        <div class="transformation-icon"><i class="fas fa-balance-scale"></i></div>
+                        <h3>Equilíbrio Interior</h3>
+                    </div>
+                    <div class="transformation-comparison">
+                        <div class="before"><i class="fas fa-times"></i><span>Instabilidade</span></div>
+                        <div class="after"><i class="fas fa-check"></i><span>Harmonia plena</span></div>
+                    </div>
+                    <p>Serenidade constante.</p>
+                </div>
+                <div class="transformation-card">
+                    <div class="transformation-header">
+                        <div class="transformation-icon"><i class="fas fa-home"></i></div>
+                        <h3>Ambiente Sagrado</h3>
+                    </div>
+                    <div class="transformation-comparison">
+                        <div class="before"><i class="fas fa-times"></i><span>Desarmonia</span></div>
+                        <div class="after"><i class="fas fa-check"></i><span>Templo de paz</span></div>
+                    </div>
+                    <p>Lar elevado.</p>
+                </div>
+                <div class="transformation-card">
+                    <div class="transformation-header">
+                        <div class="transformation-icon"><i class="fas fa-eye"></i></div>
+                        <h3>Claridade Mental</h3>
+                    </div>
+                    <div class="transformation-comparison">
+                        <div class="before"><i class="fas fa-times"></i><span>Confusão</span></div>
+                        <div class="after"><i class="fas fa-check"></i><span>Mente intuitiva</span></div>
+                    </div>
+                    <p>Decisões divinas.</p>
+                </div>
+                <div class="transformation-card">
+                    <div class="transformation-header">
+                        <div class="transformation-icon"><i class="fas fa-hands"></i></div>
+                        <h3>Cura Energética</h3>
+                    </div>
+                    <div class="transformation-comparison">
+                        <div class="before"><i class="fas fa-times"></i><span>Bloqueios</span></div>
+                        <div class="after"><i class="fas fa-check"></i><span>Fluxo restaurado</span></div>
+                    </div>
+                    <p>Cura integral.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Elevando Sua Jornada Espiritual</h2>
+                <p>Artigos selecionados para nutrir sua conexão divina e iluminar seu caminho.</p>
+                <a href="https://wa.me/5589974007492?text=Olá! Gostaria de adquirir um artigo da Essências Divinas" class="btn">Inicie Sua Jornada</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Essências Divinas</h3>
+                    <p>Artigos espirituais para despertar sua conexão com o sagrado.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> <a href="https://wa.me/5589974007492">(89) 97400-7492</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:contato@essenciasdivinas.com">contato@essenciasdivinas.com</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> São Paulo, SP</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Essências Divinas. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5589974007492?text=Olá! Gostaria de saber mais sobre os artigos da Essências Divinas" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = anchor.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+
+        // Intersection Observer for card animations
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.about-card, .product-card, .transformation-card').forEach(item => {
+            cardObserver.observe(item);
+        });
+
+        // Progress Line Animation
+        const progressFill = document.querySelector('.progress-fill');
+        const progressPoints = document.querySelectorAll('.progress-point');
+        const sections = ['home', 'about', 'products', 'transformations', 'cta', 'contact'];
+        
+        const progressObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id;
+                    const index = sections.indexOf(sectionId);
+                    if (index >= 0) {
+                        // Update progress fill height
+                        const progressHeight = ((index + 1) / sections.length) * 100;
+                        progressFill.style.height = `${progressHeight}%`;
+                        
+                        // Activate progress points up to current section
+                        progressPoints.forEach((point, i) => {
+                            if (i <= index) {
+                                point.classList.add('active');
+                            } else {
+                                point.classList.remove('active');
+                            }
+                        });
+                    }
+                }
+            });
+        }, { threshold: 0.3 });
+
+        sections.forEach(sectionId => {
+            const section = document.getElementById(sectionId);
+            if (section) progressObserver.observe(section);
+        });
+    </script>
+</body>
+</html>

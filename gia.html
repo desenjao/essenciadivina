@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essências Divinas - Artigos Espirituais</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-orange: #FF6B35;
+            --secondary-orange: #FF8C42;
+            --accent-orange: #FFB366;
+            --dark-orange: #E55A2B;
+            --light-orange: #FFF4F0;
+            --text-dark: #2C1810;
+            --text-light: #6B4423;
+            --white: #FFFFFF;
+            --gray-light: #F8F6F3;
+            --shadow: rgba(255, 107, 53, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--light-orange) 0%, var(--white) 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-orange);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            background: var(--primary-orange);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .cart-icon:hover {
+            background: var(--dark-orange);
+            transform: scale(1.1);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--dark-orange);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-orange) 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary-orange);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px var(--shadow);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(45deg, var(--accent-orange), var(--secondary-orange));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .product-description {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            margin-bottom: 1rem;
+        }
+
+        .product-variations {
+            margin-bottom: 1rem;
+        }
+
+        .variation-group {
+            margin-bottom: 0.5rem;
+        }
+
+        .variation-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            color: var(--text-dark);
+        }
+
+        .variation-options {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .variation-option {
+            padding: 0.3rem 0.8rem;
+            border: 2px solid var(--accent-orange);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+            color: var(--primary-orange);
+        }
+
+        .variation-option.selected {
+            background: var(--primary-orange);
+            color: white;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            border: 2px solid var(--accent-orange);
+            border-radius: 25px;
+            overflow: hidden;
+        }
+
+        .quantity-btn {
+            background: var(--accent-orange);
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background: var(--primary-orange);
+        }
+
+        .quantity-input {
+            border: none;
+            width: 50px;
+            text-align: center;
+            padding: 0.5rem;
+            font-weight: 600;
+        }
+
+        .add-to-cart {
+            flex: 1;
+            background: var(--primary-orange);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background: var(--dark-orange);
+            transform: scale(1.05);
+        }
+
+        .wishlist-btn {
+            background: none;
+            border: 2px solid var(--primary-orange);
+            color: var(--primary-orange);
+            padding: 0.8rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .wishlist-btn:hover,
+        .wishlist-btn.active {
+            background: var(--primary-orange);
+            color: white;
+        }
+
+        /* Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+            z-index: 2000;
+            transition: right 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.open {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--gray-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-header h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-dark);
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .cart-item-image {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-orange);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-title {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .cart-item-variations {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .cart-item-price {
+            color: var(--primary-orange);
+            font-weight: 600;
+        }
+
+        .cart-footer {
+            padding: 1.5rem;
+            border-top: 1px solid var(--gray-light);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: var(--primary-orange);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .checkout-btn:hover {
+            background: var(--dark-orange);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1500;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: var(--gray-light);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .about-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-card i {
+            font-size: 3rem;
+            color: var(--primary-orange);
+            margin-bottom: 1rem;
+        }
+
+        .about-card h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .cart-sidebar {
+                width: 100vw;
+                right: -100vw;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Cart overlay */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .cart-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">
+                <i class="fas fa-pray"></i>
+                Essências Divinas
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#products">Produtos</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Essências Divinas</h1>
+                <p>Conecte-se com o sagrado através de nossos artigos espirituais únicos</p>
+                <a href="#products" class="cta-button">
+                    <i class="fas fa-star"></i>
+                    Descobrir Produtos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Produtos Sagrados</h2>
+                <p>Cada peça é cuidadosamente selecionada para elevar sua jornada espiritual</p>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card fade-in-up">
+                    <div class="product-image">
+                        <i class="fas fa-cross"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Terço Clássico</h3>
+                        <p class="product-description">Terço tradicional feito com contas de madeira nobre, ideal para suas orações diárias.</p>
+                        <div class="product-price">R$ 45,90</div>
+                        
+                        <div class="product-variations">
+                            <div class="variation-group">
+                                <div class="variation-label">Cor:</div>
+                                <div class="variation-options">
+                                    <span class="variation-option selected" data-variation="cor" data-value="marrom">Marrom</span>
+                                    <span class="variation-option" data-variation="cor" data-value="preto">Preto</span>
+                                    <span class="variation-option" data-variation="cor" data-value="natural">Natural</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-actions">
+                            <div class="quantity-control">
+                                <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1">
+                                <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart(this)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                            <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card fade-in-up">
+                    <div class="product-image">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Terço de Cristal</h3>
+                        <p class="product-description">Terço especial com contas de cristal, perfeito para momentos de meditação profunda.</p>
+                        <div class="product-price">R$ 89,90</div>
+                        
+                        <div class="product-variations">
+                            <div class="variation-group">
+                                <div class="variation-label">Cristal:</div>
+                                <div class="variation-options">
+                                    <span class="variation-option selected" data-variation="cristal" data-value="quartzo">Quartzo</span>
+                                    <span class="variation-option" data-variation="cristal" data-value="ametista">Ametista</span>
+                                    <span class="variation-option" data-variation="cristal" data-value="rosa">Rosa</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-actions">
+                            <div class="quantity-control">
+                                <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1">
+                                <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart(this)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                            <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card fade-in-up">
+                    <div class="product-image">
+                        <i class="fas fa-star-of-david"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Terço Premium</h3>
+                        <p class="product-description">Terço luxuoso com acabamento em ouro, uma peça única para colecionadores.</p>
+                        <div class="product-price">R$ 159,90</div>
+                        
+                        <div class="product-variations">
+                            <div class="variation-group">
+                                <div class="variation-label">Acabamento:</div>
+                                <div class="variation-options">
+                                    <span class="variation-option selected" data-variation="acabamento" data-value="ouro">Ouro</span>
+                                    <span class="variation-option" data-variation="acabamento" data-value="prata">Prata</span>
+                                </div>
+                            </div>
+                            <div class="variation-group">
+                                <div class="variation-label">Tamanho:</div>
+                                <div class="variation-options">
+                                    <span class="variation-option selected" data-variation="tamanho" data-value="medio">Médio</span>
+                                    <span class="variation-option" data-variation="tamanho" data-value="grande">Grande</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-actions">
+                            <div class="quantity-control">
+                                <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1">
+                                <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart(this)">
+                                <i class="fas fa-cart-plus"></i> Adicionar
+                            </button>
+                            <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Por que Escolher a Essências Divinas?</h2>
+                <p>Compromisso com a qualidade e espiritualidade em cada produto</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-card fade-in-up">
+                    <i class="fas fa-heart"></i>
+                    <h3>Feito com Amor</h3>
+                    <p>Cada produto é cuidadosamente selecionado e preparado com dedicação e carinho especial.</p>
+                </div>
+                
+                <div class="about-card fade-in-up">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Entrega Rápida</h3>
+                    <p>Enviamos seus produtos com segurança e agilidade para todo o Brasil.</p>
+                </div>
+                
+                <div class="about-card fade-in-up">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Garantia Total</h3>
+                    <p>Satisfação garantida ou seu dinheiro de volta. Sua confiança é nossa prioridade.</p>
+                </div>
+                
+                <div class="about-card fade-in-up">
+                    <i class="fas fa-praying-hands"></i>
+                    <h3>Energia Positiva</h3>
+                    <p>Todos os produtos são energizados e abençoados antes do envio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <button class="close-cart" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div style="text-align: center; padding: 2rem; color: #999;">
+                Seu carrinho está vazio
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total: </span>
+                <span id="cartTotal">R$ 0,00</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">
+                <i class="fab fa-whatsapp"></i>
+                Finalizar no WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float" onclick="openWhatsApp()">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Essências Divinas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Cart functionality
+        let cart = [];
+        let cartTotal = 0;
+
+        function toggleCart() {
+            const sidebar = document.querySelector('.cart-sidebar');
+            const overlay = document.querySelector('.cart-overlay');
+            
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('active');
+        }
+
+        function changeQuantity(button, change) {
+            const input = button.parentElement.querySelector('.quantity-input');
+            let value = parseInt(input.value) + change;
+            if (value < 1) value = 1;
+            input.value = value;
+        }
+
+        function toggleWishlist(button) {
+            button.classList.toggle('active');
+            const icon = button.querySelector('i');
+            if (button.classList.contains('active')) {
+                icon.className = 'fas fa-heart';
+            } else {
+                icon.className = 'far fa-heart';
+            }
+        }
+
+        function addToCart(button) {
+            const card = button.closest('.product-card');
+            const title = card.querySelector('.product-title').textContent;
+            const price = parseFloat(card.querySelector('.product-price').textContent.replace('R$ ', '').replace(',', '.'));
+            const quantity = parseInt(card.querySelector('.quantity-input').value);
+            
+            // Get selected variations
+            const variations = {};
+            const selectedOptions = card.querySelectorAll('.variation-option.selected');
+            selectedOptions.forEach(option => {
+                const variationType = option.dataset.variation;
+                const variationValue = option.dataset.value;
+                variations[variationType] = variationValue;
+            });
+
+            const item = {
+                id: Date.now(),
+                title,
+                price,
+                quantity,
+                variations,
+                total: price * quantity
+            };
+
+            cart.push(item);
+            updateCartUI();
+            
+            // Animation feedback
+            button.innerHTML = '<i class="fas fa-check"></i> Adicionado!';
+            button.style.background = '#28a745';
+            setTimeout(() => {
+                button.innerHTML = '<i class="fas fa-cart-plus"></i> Adicionar';
+                button.style.background = '';
+            }, 2000);
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartItems = document.getElementById('cartItems');
+            const cartCount = document.querySelector('.cart-count');
+            const cartTotalElement = document.getElementById('cartTotal');
+
+            // Update cart count
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+
+            // Update cart total
+            cartTotal = cart.reduce((sum, item) => sum + item.total, 0);
+            cartTotalElement.textContent = `R$ ${cartTotal.toFixed(2).replace('.', ',')}`;
+
+            // Update cart items
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<div style="text-align: center; padding: 2rem; color: #999;">Seu carrinho está vazio</div>';
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <div class="cart-item-image">
+                            <i class="fas fa-cross"></i>
+                        </div>
+                        <div class="cart-item-info">
+                            <div class="cart-item-title">${item.title}</div>
+                            <div class="cart-item-variations">
+                                ${Object.entries(item.variations).map(([key, value]) => `${key}: ${value}`).join(', ')}
+                            </div>
+                            <div class="cart-item-price">
+                                ${item.quantity}x R$ ${item.price.toFixed(2).replace('.', ',')} = R$ ${item.total.toFixed(2).replace('.', ',')}
+                            </div>
+                        </div>
+                        <button onclick="removeFromCart(${item.id})" style="background: none; border: none; color: #999; cursor: pointer;">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Seu carrinho está vazio!');
+                return;
+            }
+
+            let message = '*Pedido - Essências Divinas*\n\n';
+            
+            cart.forEach(item => {
+                message += `*${item.title}*\n`;
+                message += `Quantidade: ${item.quantity}\n`;
+                if (Object.keys(item.variations).length > 0) {
+                    message += `Variações: ${Object.entries(item.variations).map(([key, value]) => `${key}: ${value}`).join(', ')}\n`;
+                }
+                message += `Preço: R$ ${item.total.toFixed(2).replace('.', ',')}\n\n`;
+            });
+
+            message += `*Total: R$ ${cartTotal.toFixed(2).replace('.', ',')}*\n\n`;
+            message += 'Gostaria de finalizar este pedido!';
+
+            const whatsappNumber = '5511999999999'; // Substitua pelo seu número
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            
+            window.open(whatsappURL, '_blank');
+        }
+
+        function openWhatsApp() {
+            const whatsappNumber = '5511999999999'; // Substitua pelo seu número
+            const message = 'Olá! Gostaria de saber mais sobre os produtos da Essências Divinas.';
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Variation selection
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('variation-option')) {
+                const group = e.target.parentElement;
+                group.querySelectorAll('.variation-option').forEach(option => {
+                    option.classList.remove('selected');
+                });
+                e.target.classList.add('selected');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.1s';
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.product-card, .about-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
